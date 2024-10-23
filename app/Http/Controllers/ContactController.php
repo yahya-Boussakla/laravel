@@ -16,17 +16,17 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        // $data = $request->validate([
-        //     'name' => 'required',
-        //     'email' => 'required|email',
-        //     'message' => 'required',
-        // ]);
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
 
-        // Mail::send('emails.contact', $data, function($message) use ($data) {
-        //     $message->to('votre_email@exemple.com', 'Destinataire')->subject('Nouveau message de contact');
-        // });
+        Mail::raw('layo', $data, function($message) use ($data) {
+            $message->to('yahyaboussakla.gmail.com', 'Destinataire')->subject('Nouveau message de contact');
+        });
 
-        // return redirect('/')->with('success', 'Votre message a bien été envoyé.');
-        var_dump($request);
+        return redirect('/')->with('success', 'Votre message a bien été envoyé.');
+        
     }
 }
