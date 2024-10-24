@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <form method="POST" action="">
     @csrf
     <div>
@@ -14,3 +17,4 @@
     </div>
     <button type="submit">Envoyer</button>
 </form>
+@endsection

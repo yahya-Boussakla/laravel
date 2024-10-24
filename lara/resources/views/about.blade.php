@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div>
     <!-- Knowing is not enough; we must apply. Being willing is not enough; we must do. - Leonardo da Vinci -->
 
@@ -5,3 +8,4 @@
     <p>Je suis Yahya Bsbs</p>
 
 </div>
+@endsection
