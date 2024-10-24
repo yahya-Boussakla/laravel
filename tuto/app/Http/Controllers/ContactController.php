@@ -22,8 +22,8 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-        Mail::raw('layo', $data, function($message) use ($data) {
-            $message->to('yahyaboussakla.gmail.com', 'Destinataire')->subject('Nouveau message de contact');
+        Mail::raw("Nom: {$data['name']}", function($message)  {
+            $message->to('yahya.boussakla.solicode@gmail.com', )->subject('Nouveau message de contact');
         });
 
         return redirect('/')->with('success', 'Votre message a bien été envoyé.');
